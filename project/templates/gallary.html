@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Image</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: rgba(9, 9, 9, 0.5); /* Add this line to set the background color */
+            width:620px;
+            margin-right:auto;
+            margin-left:auto;
+        }
+
+        img {
+           
+            height: auto;
+        }
+
+        .parent-image {
+           
+        }
+    </style>
+</head>
+<body>
+
+    <h1>QR Code Image</h1>
+
+    {% if user_images %}
+        <div class="parent-image">
+             
+            <div   class= "child-image"> 
+
+            {% for image_tuple in user_images %}
+                <img  src="{{ image_tuple.0 }}" alt="QR Code">
+            {% endfor %}
+
+        </div>
+
+        </div>
+    {% else %}
+        <p>No images found.</p>
+    {% endif %}
+
+</body>
+</html>
